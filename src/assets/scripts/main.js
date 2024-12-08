@@ -26,9 +26,10 @@ import "bootstrap/dist/js/bootstrap.min.js";
 })();
 
 function isMobile() {
-  return document.documentElement.clientWidth <= 428;
+  return document.documentElement.clientWidth <= 480;
 }
 
+// Muestra el dropdown con el menú de navegación en dispositivos móviles y en caso contrario el menú
 function toggleMenuMobile() {
   let button = document.querySelector(".nav__button");
   let menu = document.getElementById("menu");

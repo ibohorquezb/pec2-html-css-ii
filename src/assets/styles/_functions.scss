@@ -1,0 +1,4 @@
+// Convierte un color hexadecimal o nombre de color en un color RGBA con una opacidad específica:
+@function rgba-color($color, $opacity) {
+  @return rgba(red($color), green($color), blue($color), $opacity);
+}

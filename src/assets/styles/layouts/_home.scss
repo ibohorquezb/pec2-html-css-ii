@@ -1,3 +1,5 @@
+@import "../functions";
+
 body {
   // Layout
   display: flex;
@@ -99,7 +101,7 @@ body {
 
   @container (max-width: 400px) {
     .content__title {
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: rgba-color(black, 0.2);
     }
 
     .content__title h2 {
@@ -233,7 +235,10 @@ body {
     width: 100%;
     height: 100%;
 
-    background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de transparencia */
+    background-color: rgba-color(
+      black,
+      0.5
+    ); /* Negro con 50% de transparencia */
   }
 
   .cartel__title {
@@ -306,46 +311,13 @@ body {
   }
 
   .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba-color(black, 0.5);
   }
 }
 
 /**
 * CHALLENGE
 */
-
-// .container-challenge {
-//   container-type: inline-size; /* Habilita las consultas de contenedor */
-// }
-
-// .question-box {
-//   max-width: 600px;
-//   background-color: $color-bg-card;
-//   border-radius: 8px;
-//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-// }
-
-// @container (min-width: 480px) {
-//   .question-box {
-//     padding: 2rem; /* Más espacio interno para contenedores amplios */
-//     font-size: 1.5rem; /* Fuente más grande */
-//   }
-// }
-
-// @container (max-width: 480px) {
-//   .question-box {
-//     padding: 1.5rem; /* Espacio reducido para contenedores estrechos */
-//     font-size: 1.2rem; /* Fuente más pequeña */
-//   }
-// }
-
-// .question {
-//   font-weight: bold;
-// }
-
-// .answers button {
-//   margin-bottom: 0.5rem;
-// }
 
 .container-challenge {
   container-type: inline-size; /* Habilita las consultas de contenedor */

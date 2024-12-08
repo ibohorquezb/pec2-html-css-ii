@@ -1,12 +1,55 @@
 @use "sass:color";
 
+/**
+ * Familia de fuentes de letras
+ */
+
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol";
 $font-family-serif: "Georgia", "Times New Roman", serif;
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+/**
+ * Tamaño máximo de dispositivos
+ */
 
-$mqMinWidth: 420px;
+$width-mobile: 480px;
+$width-tablet: 1024px;
+
+/**
+ * Paleta de colores
+ */
+
+$color-primary: #05c6cf;
+
+$color-header-bg: #0d1b2a; // Fondo del header
+$color-header-text: #e0e1dd; // Texto del header
+
+$color-body-bg: #f5f7fa; // Fondo del cuerpo
+$color-body-text: #1b263b; // Texto principal
+
+$color-footer-bg: #0d1b2a; // Fondo del footer
+$color-footer-text: #e0e1dd; // Texto del footer
+
+$color-heading: #0a3d62; // Encabezados
+$color-link: #0bedf9; // Enlaces
+$color-link-hover: #005f99; // Hover de enlaces
+$color-bg-blockquote: #f8f9fa; // Fondo de cita
+$color-border-blockquote: #007bff; // Borde de cita
+$color-em-blockquote: #e9ecef; // Fondo de em
+
+/**
+ * Personalización de bootstrap
+ */
+
+// Color primario
+$theme-colors: (
+  "primary": $color-primary,
+);
+
+$dropdown-bg: $color-header-bg; // Fondo del dropdown
+$progress-bar-bg: $color-primary; // Fondo de la barra de progreso
+$carousel-transition-duration: 1s; // Duración de la transición entre fotos
+$card-border-radius: 1rem; // Radio del borde para los card
+$card-bg: lab(95% 0 -10); // Color de fondo de las tarjetas
+$card-title-color: #03777c; // Color del título de las tarjetas

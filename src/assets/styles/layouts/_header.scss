@@ -1,0 +1,39 @@
+.header {
+  // Layout
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1rem;
+
+  // Visual
+  color: $color-header-text;
+  background-color: $color-header-bg;
+
+  .header__title {
+    margin: 0;
+  }
+
+  .item__link {
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+
+  .link__image {
+    height: 102px;
+  }
+
+  .nav__list--inline {
+    display: inline-flex;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .list__item {
+    margin-right: 1rem;
+  }
+}

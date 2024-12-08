@@ -1,0 +1,67 @@
+// Placeholder para estilos de footer
+%footer-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+%footer-list {
+  display: inline-flex;
+  list-style-type: none;
+  margin: 1rem;
+  padding: 0;
+}
+
+.footer {
+  padding: 1rem;
+  margin-top: auto;
+  color: $color-footer-text;
+  background-color: $color-footer-bg;
+
+  .footer__contact {
+    @extend %footer-block;
+    justify-content: center;
+
+    .contact__list--inline {
+      @extend %footer-list;
+    }
+  }
+
+  .footer__links {
+    @extend %footer-block;
+
+    .link__image {
+      height: 102px; //width: 10%;
+    }
+
+    .links__list--inline {
+      @extend %footer-list;
+    }
+  }
+
+  .list__item {
+    margin-right: 1rem; // Espaciado entre los elementos de la lista
+
+    &:last-child {
+      margin-right: 0; // El último elemento no tendrá margen derecho
+    }
+  }
+
+  .item__link {
+    margin: 0;
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+// Diseño Responsive
+@media (max-width: $width-tablet) {
+  %footer-list {
+    display: block;
+  }
+}

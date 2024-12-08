@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván Bohórquez Barrios" />
+    <meta name="description" content="CyberSec Jornada 2024 - Concurso" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
+    <title>CyberSec Jornada 2024 - Concurso</title>
+</head>
+
+<body>
+    <include src="./views/header.html"></include>
+    <main>
+        <!-- Foto a todo el ancho -->
+        <div class="cartel">
+            <div class="cartel__overlay"></div>
+            <h2 class="cartel__title">Concurso de<br> Ciberseguridad 2024</h2>
+            <img class="cartel__img" src="./assets/images/bg_cybersec.webp" alt="Concurso de Ciberseguridad">
+        </div>
+
+        <article class="article container my-4">
+            <!-- Fila con dos columnas -->
+            <div class="row my-4">
+                <div class="col-md-6" data-aos="flip-left">
+                    <blockquote class="article__blockquote">
+                        <em>"La ciberseguridad es una responsabilidad compartida. Proteger nuestros datos es protegernos
+                            a nosotros mismos."</em>
+                    </blockquote>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        El Concurso de Ciberseguridad reúne a los mejores talentos del sector, brindando una plataforma
+                        donde pueden enfrentarse a retos desafiantes diseñados para reflejar situaciones reales del
+                        mundo digital. Aquí, los participantes no solo ponen a prueba sus habilidades técnicas, sino que
+                        también desarrollan estrategias innovadoras para resolver problemas complejos. Este evento se
+                        convierte en una oportunidad inigualable para aprender de los mejores, competir en un entorno
+                        emocionante y establecer conexiones valiosas con expertos y profesionales de renombre en la
+                        industria de la ciberseguridad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Separador -->
+            <hr>
+
+            <div class="row my-4" data-aos="flip-up">
+                <!-- Lista desordenada -->
+                <section class="info col-md-6">
+                    <h3>Información</h3>
+                    <ul class="info__list">
+                        <li><strong>Fecha del evento:</strong> 15 de diciembre.</li>
+                        <li><strong>Periodo de inscripción:</strong> desde el 20 de noviembre hasta el 10 de
+                            diciembre.</li>
+                        <li><strong>Categorías:</strong> individual y por equipos.</li>
+                        <li><strong>Premios para los ganadores:</strong> hasta 5.000€ en efectivo.</li>
+                    </ul>
+                </section>
+
+                <!-- Lista ordenada -->
+                <section class="col-md-6">
+                    <h3>Requisitos</h3>
+                    <ol>
+                        <li>
+                            <strong>Mayoría de edad:</strong>
+                            Los participantes deben tener al menos 18 años cumplidos antes de la fecha del
+                            evento para garantizar el cumplimiento de las normativas legales.
+                        </li>
+                        <li>
+                            <strong>Conocimientos en ciberseguridad:</strong>
+                            Los aspirantes deben tener un nivel básico o superior en ciberseguridad,
+                            incluyendo conocimientos de redes, criptografía y sistemas operativos.
+                        </li>
+                        <li>
+                            <strong>Registro previo:</strong>
+                            Todos los interesados deben completar el formulario de inscripción antes de la
+                            fecha límite indicada en la convocatoria oficial.
+                        </li>
+                        <li>
+                            <strong>Disponibilidad el día del evento:</strong>Es indispensable que los participantes
+                            estén disponibles durante todo el evento, ya que las pruebas tienen un tiempo limitado.
+                        </li>
+                    </ol>
+                </section>
+            </div>
+
+            <!-- Separador -->
+            <hr>
+
+            <!-- Fila con párrafo, imagen y más texto -->
+            <section class="row col-12" data-aos="flip-up">
+                <h3>¡No te lo pierdas!</h3>
+                <p>
+                    El Concurso de Ciberseguridad es una iniciativa que busca promover la cultura de la
+                    protección digital entre jóvenes y profesionales. Durante todo el evento se impartirán
+                    talleres y charlas de expertos reconocidos en la industria.
+                </p>
+
+                <div id="carousel" class="carousel slide my-4" data-bs-ride="carousel" data-bs-touch="false">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="5"
+                            aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="6"
+                            aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="7"
+                            aria-label="Slide 8"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./assets/images/carousel_1.jpg" class="d-block w-100" alt="CybeSec Jornada 2023">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Imágenes del pasado CyberSec - Jornada 2023</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/carousel_2.jpg" class="d-block w-100" alt="CybeSec Jornada 2023">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Imágenes del pasado CyberSec - Jornada 2023</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/carousel_3.jpg" class="d-block w-100" alt="CybeSec Jornada 2023">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Imágenes del pasado CyberSec - Jornada 2023</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/carousel_4.jpg" class="d-block w-100" alt="CybeSec Jornada 2023">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Imágenes del pasado CyberSec - Jornada 2023</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/carousel_5.jpg" class="d-block w-100" alt="CybeSec Jornada 2023">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Imágenes del pasado CyberSec - Jornada 2023</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/carousel_6.jpg" class="d-block w-100" alt="CybeSec Jornada 2023">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Imágenes del pasado CyberSec - Jornada 2023</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/carousel_7.jpg" class="d-block w-100" alt="CybeSec Jornada 2023">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Imágenes del pasado CyberSec - Jornada 2023</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/carousel_8.jpg" class="d-block w-100" alt="CybeSec Jornada 2023">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Imágenes del pasado CyberSec - Jornada 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <p>
+                    Cada equipo tendrá que enfrentarse a una serie de retos en diferentes áreas como la
+                    seguridad en la nube, criptografía, análisis forense y más. ¡Demuestra que puedes ser el
+                    mejor!
+                </p>
+                <p>
+                    Si eres apasionado de la tecnología y quieres desafiar tus habilidades, este concurso es
+                    para ti. Inscríbete ahora y forma parte de esta experiencia única.
+                </p>
+            </section>
+        </article>
+    </main>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+</body>
+
+</html>

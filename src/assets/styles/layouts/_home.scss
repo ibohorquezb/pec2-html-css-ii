@@ -1,57 +1,427 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
+  // Layout
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
-  padding: 2rem;
+
+  // Typography
   font-family: $font-family-sans-serif;
   font-size: 16px;
   line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+
+  // Visual
+  color: $color-body-text;
+  background-color: $color-body-bg;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
+@layer custom {
+  h2 {
+    font-weight: bold;
+
+    text-align: center;
+    margin-top: 1rem;
+
+    color: $color-heading;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .card-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/**
+ * FRONT PAGE
+ */
+
+.main {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 1fr; // La primera columna se ajusta automáticamente
+  gap: 0;
+  min-height: 100vh;
+
+  background-image: url("../images/bg.jpg");
+
+  &__poster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1;
+
+    overflow: hidden;
+
+    img {
+      width: 50%;
+      height: auto; // Mantiene la proporción de la imagen
+      object-fit: contain; // Asegura que la imagen completa sea visible
+      margin: 1rem;
+      filter: drop-shadow(black 0.5rem 0.5rem 10px);
+    }
+  }
+
+  &__content {
+    container-type: inline-size; /* Habilita las consultas basadas en el tamaño del contenedor */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    grid-column: 2;
+
+    padding: 2rem;
+    text-align: center;
+
+    .content__title {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      h2 {
+        margin-bottom: 1rem;
+        color: $color-header-text;
+      }
+
+      p {
+        color: $color-header-text;
+        text-shadow: 1px 0 10px black;
+      }
+    }
+
+    .content__cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @container (max-width: 400px) {
+    .content__title {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .content__title h2 {
+      font-size: 3rem; // Tamaño más pequeño para contenedores estrechos
+      text-shadow: 1px 0 10px black;
+    }
+
+    .content__title p {
+      font-size: 1.2rem; // Tamaño más pequeño para contenedores estrechos
+    }
+  }
+
+  @container (min-width: 500px) {
+    .content__title h2 {
+      font-size: 4rem; // Tamaño más grande para contenedores anchos
+    }
+
+    .content__title p {
+      font-size: 1.5rem; // Tamaño más grande para contenedores anchos
+    }
+  }
+
+  // Alternativa con Flexbox para navegadores que no admiten Grid
+  @supports not (display: grid) {
+    display: flex;
+    flex-direction: column;
+
+    &__poster {
+      flex: 1;
+      height: 50vh; // Altura relativa al viewport
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &__content {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 1rem;
+
+      text-align: center;
+
+      &__title {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      &__cta {
+        flex: 0;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+/**
+ * SPEAKERS
+ */
+
+.speakers {
+  container-type: inline-size; /* Habilita el contenedor */
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+
   padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
+  .speakers__speaker {
+    margin: 0;
+    box-sizing: border-box; // Respeta el ancho incluyendo padding y borde
+  }
 
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
+  .speaker__figure {
+    text-align: center;
+  }
+
+  .picture__img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @container (min-width: 1024px) {
+    .speakers__speaker {
+      flex: 1 1 calc(33.333% - 1rem); /* Tres por fila */
+    }
+  }
+
+  @container (max-width: 1024px) {
+    .speakers__speaker {
+      flex: 1 1 calc(50% - 1rem); /* Dos por fila */
+    }
+  }
+
+  @container (max-width: 480px) {
+    .speakers__speaker {
+      flex: 1 1 100%; /* Una por fila */
+    }
   }
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
+/**
+* COMPETITION
+*/
 
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
+.cartel {
+  container-type: inline-size;
+  position: relative;
+  max-height: 400px; /* Ajusta según tu diseño */
+  overflow: hidden;
+
+  /* Imagen de ancho completo */
+  .cartel__img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cartel__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de transparencia */
+  }
+
+  .cartel__title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    z-index: 2;
+
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Para mejorar la legibilidad */
+
+    color: $color-header-text;
+    transform: translate(-50%, -50%);
+  }
+
+  @container (min-width: 480px) {
+    .cartel__title {
+      font-size: 3rem;
+    }
+  }
+
+  @container (max-width: 480px) {
+    .cartel__title {
+      font-size: 2rem;
+    }
   }
 }
 
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
+.article {
+  container-type: inline-size;
+
+  /* Estilo para citas */
+  .article__blockquote {
+    font-style: italic;
+    border-left: 5px solid $color-border-blockquote;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+
+    background-color: $color-bg-blockquote;
+  }
+
+  @container (min-width: 480px) {
+    .article__blockquote {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  @container (max-width: 480px) {
+    .article__blockquote {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  /* Pseudoclase :has() para resaltar elementos que contienen citas */
+  .blockquote:has(em) {
+    background-color: $color-em-blockquote;
+  }
+
+  /* Estilo para listas */
+  .info__list {
+    list-style-type: square;
+    padding-left: 1rem;
+  }
+
+  /* Pseudoclase :is() para seleccionar párrafos dentro de secciones específicas */
+  section :is(h2, p) {
+    margin-bottom: 1rem;
+  }
+
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/**
+* CHALLENGE
+*/
+
+// .container-challenge {
+//   container-type: inline-size; /* Habilita las consultas de contenedor */
+// }
+
+// .question-box {
+//   max-width: 600px;
+//   background-color: $color-bg-card;
+//   border-radius: 8px;
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+// }
+
+// @container (min-width: 480px) {
+//   .question-box {
+//     padding: 2rem; /* Más espacio interno para contenedores amplios */
+//     font-size: 1.5rem; /* Fuente más grande */
+//   }
+// }
+
+// @container (max-width: 480px) {
+//   .question-box {
+//     padding: 1.5rem; /* Espacio reducido para contenedores estrechos */
+//     font-size: 1.2rem; /* Fuente más pequeña */
+//   }
+// }
+
+// .question {
+//   font-weight: bold;
+// }
+
+// .answers button {
+//   margin-bottom: 0.5rem;
+// }
+
+.container-challenge {
+  container-type: inline-size; /* Habilita las consultas de contenedor */
+}
+
+.question-box {
+  max-width: 90dvw; /* Máximo 90% del ancho dinámico del viewport */
+  background-color: lab(95% 0 -10); /* Fondo con color en espacio LAB */
+  border-radius: 1rem; /* Bordes más redondeados */
+  box-shadow: 0 1dvh 1.5dvh rgba(0, 0, 0, 0.1); /* Sombras adaptativas */
+}
+
+@container (min-width: 480px) {
+  .question-box {
+    padding: 2rem; /* Más espacio interno para contenedores amplios */
+    font-size: clamp(
+      1.2rem,
+      2.5vw,
+      1.5rem
+    ); /* Escalado adaptativo para fuentes */
+  }
+}
+
+@container (max-width: 480px) {
+  .question-box {
+    padding: 1.5rem; /* Espacio reducido para contenedores estrechos */
+    font-size: clamp(
+      1rem,
+      2.5vw,
+      1.2rem
+    ); /* Escalado adaptativo para fuentes */
+  }
+}
+
+.question {
+  font-weight: bold;
+  color: color-mix(
+    in srgb,
+    black 40%,
+    $color-primary
+  ); /* Color adaptado mediante mezcla */
+}
+
+.answers button {
+  margin-bottom: 0.5rem;
+}
+
+/**
+* RESPONSIVE DESIGN
+*/
+
+@media (max-width: $width-tablet) {
+  .main {
+    grid-template-rows: auto auto; // Póster encima del contenido
+    padding: 5rem 0;
+    min-height: 0;
+
+    &__poster {
+      img {
+        width: 100%;
+        height: auto; // Mantiene la proporción de la imagen en pantallas más pequeñas
+      }
+    }
+  }
+}
+
+@media (max-width: $width-mobile) {
+  .main {
+    grid-template-columns: 1fr; // Cambia a una sola columna en pantallas más pequeñas
+
+    .main__content {
+      grid-column: 1;
+
+      .content__title p {
+        font-size: 0.9rem;
+      }
+    }
+  }
 }

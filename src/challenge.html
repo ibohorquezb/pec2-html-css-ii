@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iván Bohórquez Barrios" />
+    <meta name="description" content="CyberSec Jornada 2024 - Reto" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
+    <title>CyberSec Jornada 2024 - Reto</title>
+</head>
+
+<body>
+    <include src="./views/header.html"></include>
+    <main>
+        <div class="container-challenge container py-5">
+            <h2 class="text-center mb-4">Reto de Ciberseguridad</h2>
+            <div id="challenge" class="question-box mx-auto">
+                <p class="question">Bienvenido al reto, ¡haz click en comenzar!</p>
+                <div class="answers">
+                    <button id="start" class="btn btn-primary w-100">Comenzar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+    <script type="module" src="./assets/scripts/challenge.js"></script><!-- do not remove this line! -->
+</body>
+
+</html>
